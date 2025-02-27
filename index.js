@@ -27,7 +27,7 @@ const showTotal = () => {
 };
 
 const showOrders = () => {
-  let str = "<div style='padding:30px'><h3>My Orders</h1>";
+  let str = "<div style='background-color:rgba(253, 137, 4, 0.17); padding:30px'><h3>My Orders</h1>";
   orders.map((value) => {
     if (value.customer === user.email) {
       str += `
@@ -40,12 +40,12 @@ const showOrders = () => {
       `;
     }
   });
-  divProducts.innerHTML = str + "</div>"
+  divProducts.innerHTML = str + "</div>";
 };
 
 const showMain = () => {
   let str = `
-  <div class="container">
+  <div class="container-fluid">
       <div class="header">
         <h1>My Store</h1>
         <div class='menu'>
@@ -55,18 +55,23 @@ const showMain = () => {
           <li onclick='showLogin()'>Logout</li>
         </div>
       </div>
-      <div class="productBlock">
-        <div id="divProducts"></div>
+
+    <div class="pt-5">
+        <div id="divProducts">
+        </div>
       </div>
-      <div id="divCartBlock" class="cartBlock">
+      
+      <div style="background-color:rgba(253, 137, 4, 0.15)" id="divCartBlock" class="cartBlock m-3">
         <h3>My Cart</h3>
         <div id="divCart"></div>
         <div id="divTotal"></div>
-        <button onclick="hideCart()">Close</button>
+        <button style="padding: 5px; width: 100px; background-color: #fc6a03; border: 2px solid #fc6a03; border-radius: 3px;" onclick="hideCart()">Close</button>
       </div>
-        <hr>
-    <h4>@Copyright 2025. All rights reserved.</h4>
     </div>
+
+
+    <p><h4 style="text-align:center; background-color: #fc6a03; padding: 10px">@Copyright 2025. All rights reserved.</h4></p>
+  </div>
   `;
   root.innerHTML = str;
   showProducts();
@@ -82,8 +87,8 @@ const placeOrder = () => {
   };
   orders.push(obj);
   cart = {};
-  showCart()
-  hideCart()
+  showCart();
+  hideCart();
   showOrders();
   console.log(orders);
 };
@@ -93,16 +98,16 @@ const showCart = () => {
   products.map((value) => {
     if (cart[value.id]) {
       str += `
-        <li>${value.name}-$${value.price}-<button onclick='decrement(${
+        <li>${value.name}-$${value.price}-<button style="padding: 5px; height: 40px; width: 20px; background-color: #fc6a03; border: 2px solid #fc6a03; border-radius: 3px;" onclick='decrement(${
         value.id
-      })'>-</button>${cart[value.id]}<button onclick='increment(${
+      })'>-</button>${cart[value.id]}<button style="padding: 5px; height: 40px; width: 20px; background-color: #fc6a03; border: 2px solid #fc6a03; border-radius: 3px;" onclick='increment(${
         value.id
       })'>+</button>-$${value.price * cart[value.id]}</li>
      
         `;
     }
   });
-  str += `<button onclick='placeOrder()'>Place Order</button>`;
+  str += `<button style="padding: 5px; width: 100px; background-color: #fc6a03; border: 2px solid #fc6a03; border-radius: 3px;" onclick='placeOrder()'>Place Order</button>`;
   divCart.innerHTML = str;
   let count = Object.keys(cart).length;
   items.innerHTML = count;
@@ -117,27 +122,29 @@ const hideCart = () => {
 
 function showLogin() {
   let str = `
-  <div class='login'>
-      <h2>Login Form</h2>
+  <div class="login d-flex flex-column justify-content-center" style="height: 100vh; text-align:center; background-color:rgba(253, 137, 4, 0.17)">
+      <h1 style="font-family: 'dancing script'; color: #fc6a03; font-size:29px; padding:20px;">Login Form</h1>
       <div id='msg'></div>
       <p><input id="email" type="text"></p>
       <p><input id="password" type="password"></p>
-      <button onclick='chkUser()'>Log In</button>
-      <p><button onclick='showForm()'>Create Account</button></p>
+      <p><button style="padding: 5px; width: 100px; background-color: #fc6a03; border: 4px solid  #fc6a03; border-radius: 3px;" onclick='chkUser()'>Log In</button></p>
+      <p><button style="padding: 5px; width: 200px; background-color: #fc6a03; border: 2px solid  #fc6a03; border-radius: 3px;" onclick='showForm()'>Create Account</button></p>
   </div>
   `;
   root.innerHTML = str;
 }
 
 function showForm() {
-  let str = `<div class='registration'>
-  <h2>Registration Form</h2>
+  let str = `<div class="registration d-flex flex-column justify-content-center" style="height: 100vh; text-align:center; background-color:rgba(253, 137, 4, 0.17)">
+  <h1 style="font-family: 'dancing script'; color:  #fc6a03; font-size:29px; padding:20px;">Registration Form</h1>
   <p><input type="text" id="name" placeholder="Name"></p>
   <p><input type="text" id="email" placeholder="Email"></p>
   <p><input type="password" id="password" placeholder="Password"></p>
   <p><input type="date" id="dob"></p>
-  <p><button onclick='addUser()'>Submit</button></p>
-  <p>Already a member?<button onclick='showLogin()'>Login Here</button></p>
+  <p><button style="padding: 5px; width: 100px; background-color: #fc6a03; border: 2px solid #fc6a03; border-radius: 3px;" onclick='addUser()'>Submit</button></p>
+  <p>Already a member?<br>
+  <button style="padding: 5px; width: 200px; background-color: #fc6a03; border: 2px solid #fc6a03; border-radius: 3px;" onclick='showLogin()'>Login Here</button>
+  </p> 
   `;
   root.innerHTML = str + "</div>";
 }
@@ -183,13 +190,18 @@ const showProducts = () => {
       let str = "<div class='row'>";
       products.map((value) => {
         str += `
-          <div class='box'>
-          <h3>${value.name}</h3>
-          <p>${value.desc}</p>
-          <h4>$${value.price}</h4>
-          <button onclick=addToCart(${value.id})>Add to Cart</button>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="${value.image}" class="card-img-top" alt="${value.name}">
+              <div class="card-body">
+                <h5 class="card-title">${value.name}</h5>
+                <p class="card-text">${value.desc}</p>
+                <h6 class="card-subtitle mb-2 text-muted">$${value.price}</h6>
+                <button class="cartbtn" onclick="addToCart(${value.id})">Add to Cart</button>
+              </div>
+            </div>
           </div>
-          `;
+        `;
       });
       divProducts.innerHTML = str + "</div>";
     });
