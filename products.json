@@ -1,57 +1,65 @@
 [
   {
     "id": 1,
-    "name": "Product 1",
-    "desc": "Description of the product. Description of the product. ",
-    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ718nztPNJfCbDJjZG8fOkejBnBAeQw5eAUA&s", 
-    "price": 25
+    "image": "https://www.lavanyathelabel.com/cdn/shop/files/01_LBL101KS352_6_1200x.jpg?v=1740035461",
+    "name": "Long Dress",
+    "desc": "Pink Silk Long Dress With Dupatta",
+    "price": 3599
   },
   {
     "id": 2,
-    "name": "Product 2",
-    "desc": "Description of the product. Description of the product. ",
-    "price": 45
+    "image":"https://www.lavanyathelabel.com/cdn/shop/files/LBL101KS584_2_500x.jpg?v=1740034980",
+    "name": "Sharara",
+    "desc": "Mauve Velvet Sharara Set",
+    "price": 5999
   },
   {
     "id": 3,
-    "name": "Product 3",
-    "desc": "Description of the product. Description of the product. ",
-    "price": 30
+    "image":"https://www.lavanyathelabel.com/cdn/shop/files/DSC_5010_4c611325-7778-447c-9446-6ebd96bca81f_500x.jpg?v=1740035363",
+    "name": "Three Piece Set",
+    "desc": "Yellow Georgette Three Piece Set",
+    "price": 3599
   },
   {
-    "id": 4,
-    "name": "Product 4",
-    "desc": "Description of the product. Description of the product. ",
-    "price": 60
-  },
-  {
-    "id": 5,
-    "name": "Product 5",
-    "desc": "Description of the product. Description of the product. ",
-    "price": 30
-  },
-  {
-    "id": 6,
-    "name": "Product 6",
-    "desc": "Description of the product. Description of the product. ",
-    "price": 45
-  },
-  {
-    "id": 7,
-    "name": "Product 7",
-    "desc": "Description of the product. Description of the product. ",
-    "price": 29
-  },
-  {
-    "id": 8,
-    "name": "Product 8",
-    "desc": "Description of the product. Description of the product. ",
-    "price": 25
-  },
-  {
-    "id": 9,
-    "name": "Product 9",
-    "desc": "Description of the product. Description of the product. ",
-    "price": 95
-  }
+      "id": 4,
+      "image":"https://assets2.andaazfashion.com/media/catalog/product/e/m/embroidered-chinnon-dark-purple-gown-lstv121403-1.jpg",
+      "name": "Gown With Dupatta",
+      "desc": "Wine Sequins Georgette Wear Gown With Dupatta",
+      "price": 6059
+    },
+    {
+      "id": 5,
+      "image":"https://www.wedabout.com/blog/wp-content/uploads/2023/05/dark-green-engagement-lehenga-dress-for-bride.webp",
+      "name": "Classic Lehenga",
+      "desc": "Classic Black Silk Lehenga",
+      "price": 3199
+    },
+    {
+      "id": 6,
+      "image":"https://www.wedabout.com/blog/wp-content/uploads/2023/05/Sabyasachi-golden-engagement-lehenga-dress-for-bride.jpg",
+      "name": "Corset Lehenga Set",
+      "desc": "Libas Art Peach Embellished Net Lehenga Set",
+      "price": 4599
+    },
+    {
+      "id": 7,
+      "image":"https://cdn-appdata.seasonsindia.com/uploads/feature_images/565-1801.jpg",
+      "name": "Gown",
+      "desc": "Florl Net Fish Cut Gown",
+      "price": 6500
+    },
+    {
+      "id": 8,
+      "image":"https://anayadesignerstudio.com/cdn/shop/files/pinklonggownforwomen.webp?v=1723714472",
+      "name": "Gown",
+      "desc": "Indian Traditional Long Pink Colour Gown",
+      "price": 5599
+    },
+    {
+      "id": 9,
+      "image":"https://wholetex.sgp1.cdn.digitaloceanspaces.com/full/navratri-georgette-bandhani-print-work-gown-ka-1119-920.jpg",
+      "name": "Salwar Suit",
+      "desc": "Orange Silk Embroidered Work Salwar Suit",
+      "price": 9000
+    }
 ]
